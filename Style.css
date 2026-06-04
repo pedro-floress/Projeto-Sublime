@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Source Sans 3';
+}
+nav {
+    background-color: #3c1d0c;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin-left: auto;
+}
+
+.botão-orçamento {
+    background-color: #ba8b2a;
+
+}
