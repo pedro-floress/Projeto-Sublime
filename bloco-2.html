@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sublime Ambientes - Quem Somos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-creme': '#FCF9F5',
+                        'marca-marrom': '#3F2A1D',
+                        'marca-dourado': '#B38B4D',
+                        'texto-cinza': '#5A5A5A'
+                    },
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                        'script': ['Great Vibes', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg-creme flex items-center justify-center min-h-screen p-6 md:p-12 overflow-x-hidden">
+
+    <div class="max-w-6xl w-full flex flex-col md:flex-row items-center gap-8 md:gap-10">
+
+        <div class="relative w-full md:w-[56%] flex justify-center mt-12 md:mt-0">
+
+            <img
+                src="moveis_pj_sublime_crop_t.png"
+                alt="Composição de móveis Sublime"
+                class="w-full h-auto object-contain z-10"
+            >
+
+            <div class="absolute -bottom-4 md:bottom-6 right-2 md:-right-2 bg-[#40220f] text-white rounded-full w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-evenly py-3 md:py-4 shadow-xl text-center z-20">
+                <span class="text-[11px] md:text-[13px] font-sans font-bold opacity-90 -mb-3 mt-3">desde</span>
+                <span class="text-3xl md:text-4xl font-serif font-bold leading-none mb-0" style="color: #CFA059;">2018</span>
+                <span class="text-[11px] md:text-[13px] font-sans font-bold lowercase tracking-widest opacity-90 mb-11">no mercado</span>
+            </div>
+        </div>
+
+        <div class="w-full md:w-[44%] flex flex-col items-start px-2 md:px-6">
+
+            <div class="mb-10 w-full flex justify-center">
+                <img src="logo_sublime_definida_crop_t.png" alt="Sublime Ambientes Planejados" class="w-56 md:w-72 h-auto">
+            </div>
+
+            <p class="font-sans text-marca-dourado text-[11px] md:text-xs font-bold tracking-[0.15em] uppercase mb-3">
+                Quem Somos
+            </p>
+
+            <h2 class="font-serif text-4xl md:text-5xl text-[#40220f] font-semibold leading-tight mb-3">
+                Uma história feita de <br class="hidden md:block">
+                <span class="font-script text-marca-dourado text-5xl md:text-6xl font-normal italic pr-2" style="text-shadow: 0.5px 0.5px 0px #B38B4D;">paixão</span>
+                por ambientes
+            </h2>
+
+            <hr class="w-16 border-t-[2px] border-marca-dourado mb-6">
+
+            <p class="font-sans text-marca-marrom text-sm md:text-base leading-relaxed text-justify">
+                A Sublime Ambientes é uma referência na região, destacando-se pela excelência, qualidade e atendimento personalizado. Com uma equipe apaixonada e uma história sólida, tornou-se sinônimo de <strong class="text-marca-dourado font-medium">sofisticação</strong> no setor de móveis personalizados. A empresa transforma ideias em peças únicas, adaptadas ao estilo dos clientes, atendendo necessidades práticas e refletindo a personalidade de quem as encomenda, tanto em ambientes residenciais quanto comerciais.
+            </p>
+
+        </div>
+    </div>
+
+</body>
+</html>
