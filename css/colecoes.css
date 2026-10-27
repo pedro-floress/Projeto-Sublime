@@ -1,0 +1,163 @@
+/* ============================================================
+   BLOCO 3 — Coleções
+   Autor original: LucasSampaio2005 (branch Bloco-3)
+   Adaptações: regra global "img" escopada aqui dentro,
+   fonte Aileron trocada pelos tokens da marca,
+   media queries reativadas (estavam comentadas no original),
+   corrigido "height: px" em .card__img-wrap img
+   ============================================================ */
+
+.colecoes {
+  background-color: var(--branco);
+  padding: 96px 0;
+}
+
+.colecoes__header {
+  margin-bottom: 52px;
+}
+
+.colecoes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-bottom: 48px;
+}
+
+/* ---------- Card ---------- */
+.card {
+  background-color: var(--creme-escuro);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(44,31,14,.05);
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 28px rgba(44,31,14,.12);
+  transform: translateY(-4px);
+}
+
+.card__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background-color: #EDE5D8;
+  flex-shrink: 0;
+}
+
+/* Escopado: no original era uma regra "img" global que
+   deformava o logo do nav e as imagens do Quem Somos */
+.card__img-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.card:hover .card__img-wrap img { transform: scale(1.05); }
+
+.card__body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card__category {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  margin-bottom: 8px;
+}
+
+.card__title {
+  font-family: var(--fonte-titulo);
+  font-size: 19px;
+  color: var(--marrom-escuro);
+  margin-bottom: 10px;
+}
+
+.card__desc {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--texto-medio);
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 4px;
+  line-height: 1;
+  background-color: #F1D1A6;
+  color: var(--marrom-escuro);
+}
+
+/* ---------- Botão Instagram ---------- */
+.colecoes__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--dourado);
+  color: var(--branco);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  border-radius: 6px;
+  transition: background-color .22s ease, transform .22s ease;
+}
+.btn-instagram:hover {
+  background-color: #A8782E;
+  transform: translateY(-1px);
+}
+.btn-instagram:active { transform: translateY(0); }
+
+/* Variante do link para o site institucional */
+.btn-instagram--contorno {
+  background-color: transparent;
+  color: var(--dourado);
+  box-shadow: inset 0 0 0 2px var(--dourado);
+}
+.btn-instagram--contorno:hover {
+  background-color: var(--dourado);
+  color: var(--branco);
+}
+.btn-instagram svg { flex-shrink: 0; }
+
+/* ---------- Responsivo (reativado) ---------- */
+@media (max-width: 900px) {
+  .colecoes { padding: 72px 0; }
+  .colecoes__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+@media (max-width: 560px) {
+  .colecoes { padding: 56px 0 64px; }
+  .colecoes__grid { grid-template-columns: 1fr; gap: 20px; }
+  .btn-instagram { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .card__img-wrap img, .btn-instagram { transition: none; }
+  .card:hover, .card:hover .card__img-wrap img, .btn-instagram:hover { transform: none; }
+}

@@ -1,0 +1,279 @@
+/* ============================================================
+   BLOCO 1 — Navbar + Hero com carrossel
+   Autor original: pedro-floress (branch Bloco-1)
+   Adaptações: escopado, tokens da marca, menu mobile, responsivo
+   ============================================================ */
+
+/* ---------------- Navbar ---------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--marrom-escuro);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: var(--altura-nav);
+}
+
+.site-header__logo img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+.site-header__nav { margin-left: auto; }
+
+.site-header__nav ul {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  list-style: none;
+}
+
+.site-header__nav a {
+  color: var(--branco);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color .2s ease;
+}
+
+.site-header__nav a:hover { color: var(--dourado-claro); }
+
+.site-header__nav .botao-orcamento {
+  background-color: var(--dourado);
+  color: var(--marrom-escuro);
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.site-header__nav .botao-orcamento:hover {
+  background-color: var(--dourado-claro);
+  color: var(--marrom-escuro);
+}
+
+/* Botão hambúrguer — escondido no desktop */
+.menu-toggle {
+  display: none;
+  margin-left: auto;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+}
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background-color: var(--branco);
+  margin: 5px 0;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------------- Hero ---------------- */
+.hero {
+  position: relative;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero .carrossel {
+  position: absolute;
+  inset: 0;
+}
+
+.hero .carrossel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+
+.hero .carrossel img.ativa { opacity: 1; }
+
+/* Véu escuro: garante contraste do texto sobre qualquer foto */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(30,14,5,.72) 0%, rgba(30,14,5,.45) 55%, rgba(30,14,5,.30) 100%);
+  z-index: 1;
+}
+
+.hero-conteudo {
+  position: relative;
+  z-index: 2;
+  padding: 90px 0;
+}
+
+.hero-conteudo h1 {
+  max-width: 680px;
+  color: var(--branco);
+  font-size: clamp(38px, 6vw, 72px);
+  margin-bottom: 22px;
+}
+
+.hero-conteudo h1 em { display: block; }
+
+.hero-conteudo p {
+  max-width: 520px;
+  color: rgba(255,255,255,.9);
+  font-size: 18px;
+}
+
+.hero-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 46px;
+}
+
+/* Setas do carrossel */
+.hero .setas {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: rgba(0,0,0,.25);
+  border: none;
+  color: var(--branco);
+  cursor: pointer;
+  font-size: 26px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .75;
+  transition: opacity .2s ease, background-color .2s ease;
+}
+.hero .setas:hover { opacity: 1; background: rgba(0,0,0,.5); }
+.hero .seta-esquerda { left: 22px; }
+.hero .seta-direita  { right: 22px; }
+
+/* Indicadores */
+.hero-indicadores {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+.hero-indicadores button {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,.45);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color .25s ease, transform .25s ease;
+}
+.hero-indicadores button.ativo {
+  background: var(--dourado-claro);
+  transform: scale(1.3);
+}
+
+/* Números de destaque */
+.hero-dados {
+  position: absolute;
+  bottom: 34px;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--largura-max);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 44px;
+  color: var(--branco);
+  text-transform: uppercase;
+}
+
+.hero-dados div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-dados .dados-numeros {
+  color: var(--dourado-claro);
+  font-family: var(--fonte-titulo);
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.hero-dados .dados-texto {
+  max-width: 90px;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-align: center;
+}
+
+/* ---------------- Responsivo ---------------- */
+@media (max-width: 900px) {
+  .menu-toggle { display: block; }
+
+  .site-header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--marrom-escuro);
+    margin-left: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+  }
+  .site-header__nav.aberto { max-height: 420px; }
+
+  .site-header__nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 32px 24px;
+  }
+  .site-header__nav li { border-top: 1px solid rgba(255,255,255,.12); }
+  .site-header__nav a { display: block; padding: 15px 0; }
+  .site-header__nav .botao-orcamento {
+    display: inline-block;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .hero { min-height: 560px; }
+  .hero-conteudo { padding: 64px 0 120px; }
+  .hero-dados { justify-content: flex-start; gap: 30px; }
+  .hero .setas { width: 40px; height: 40px; font-size: 20px; }
+}
+
+@media (max-width: 560px) {
+  .hero-dados { display: none; }
+  .hero-botoes .botao { width: 100%; text-align: center; }
+}
+
+/* Destaque do H1 do hero: Playfair itálico, em dourado claro
+   para contrastar com a foto escura */
+.hero-conteudo h1 em {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  color: var(--dourado-claro);
+}

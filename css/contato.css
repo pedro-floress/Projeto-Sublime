@@ -1,0 +1,347 @@
+/* ============================================================
+   BLOCOS 4 e 5 — Depoimentos, Contato e Rodapé
+   Autor original: LucasSampaio2005
+   (estavam na pasta "blocos 4 e 5/" dentro da branch Bloco-3)
+   Adaptações: cores/fontes trocadas pelos tokens da marca,
+   padding em % trocado por .container
+   ============================================================ */
+
+/* ---------------- DEPOIMENTOS ---------------- */
+.depoimentos {
+  background-color: var(--marrom-escuro);
+  padding: 80px 0;
+}
+
+.depoimentos .secao-eyebrow { color: var(--dourado-claro); }
+
+.depoimentos .secao-titulo {
+  color: var(--branco);
+  margin-bottom: 40px;
+}
+
+.depoimentos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.depoimento-card {
+  background: var(--creme);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.depoimento-card .aspas {
+  font-family: var(--fonte-titulo);
+  font-size: 32px;
+  line-height: 1;
+  color: var(--dourado);
+}
+
+.depoimento-card .estrelas {
+  display: flex;
+  gap: 3px;
+  color: var(--dourado);
+  font-size: 18px;
+}
+
+.depoimento-card p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--texto-medio);
+  flex: 1;
+}
+
+.depoimento-autor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.autor-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--dourado), var(--marrom-medio));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--branco);
+  flex-shrink: 0;
+}
+
+.autor-info strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.autor-info span {
+  font-size: 12px;
+  color: #9A7A5A;
+}
+
+.depoimentos__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* ---------------- CONTATO ---------------- */
+.contato {
+  background-color: var(--creme-escuro);
+  padding: 88px 0;
+}
+
+.contato__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contato__info .secao-titulo { margin-bottom: 4px; }
+
+.contato__info p.descricao {
+  font-size: 14.5px;
+  color: var(--texto-medio);
+  line-height: 1.7;
+  margin: 22px 0 32px;
+  max-width: 460px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.info-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background-color: var(--marrom-escuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--dourado-claro);
+}
+
+.info-item strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--dourado);
+  margin-bottom: 3px;
+}
+
+.info-item p {
+  font-size: 13.5px;
+  color: var(--texto-medio);
+  line-height: 1.6;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: var(--branco);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: background-color .2s ease;
+}
+.btn-whatsapp:hover { background-color: #1EBE5D; }
+.btn-whatsapp svg { width: 22px; height: 22px; fill: var(--branco); }
+
+/* ---------------- FORMULÁRIO ---------------- */
+.formulario {
+  background: var(--branco);
+  border-radius: 14px;
+  padding: 36px 32px;
+  box-shadow: 0 4px 24px rgba(60,29,12,.09);
+}
+
+.formulario h3 {
+  font-size: 22px;
+  color: var(--texto);
+  margin-bottom: 24px;
+}
+
+.form-linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-grupo label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--texto-medio);
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+  font-family: var(--fonte-corpo);
+  font-size: 14px;
+  color: var(--texto);
+  background: var(--creme);
+  border: 1px solid #DDD3C5;
+  border-radius: 8px;
+  padding: 11px 14px;
+  width: 100%;
+  transition: border-color .2s ease;
+}
+
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder { color: #BBB0A0; }
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+  border-color: var(--dourado);
+}
+
+.form-grupo textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-grupo select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239a7a5a' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+
+.btn-enviar {
+  width: 100%;
+  background-color: var(--dourado);
+  color: var(--branco);
+  font-family: var(--fonte-corpo);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background-color .2s ease;
+}
+.btn-enviar:hover { background-color: var(--dourado-claro); color: var(--marrom-escuro); }
+
+.form-aviso {
+  margin-top: 14px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  text-align: center;
+  min-height: 18px;
+}
+.form-aviso--ok  { color: #1E7A45; }
+.form-aviso--erro { color: #B3261E; }
+
+/* ---------------- RODAPÉ ---------------- */
+.site-footer {
+  background-color: var(--marrom-escuro);
+  color: var(--branco);
+  padding: 56px 0 30px;
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.site-footer__marca p {
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.7;
+  margin-top: 14px;
+  max-width: 240px;
+}
+
+.site-footer__logo img {
+  width: 190px;
+  height: auto;
+  display: block;
+}
+
+.site-footer__col h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dourado-claro);
+  margin-bottom: 16px;
+}
+
+.site-footer__col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-footer__col a {
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+  transition: color .2s ease;
+}
+.site-footer__col a:hover { color: var(--dourado-claro); }
+
+.site-footer__bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 24px;
+  font-size: 12px;
+  color: rgba(255,255,255,.38);
+  text-align: center;
+}
+
+/* ---------------- Responsivo ---------------- */
+@media (max-width: 900px) {
+  .depoimentos { padding: 64px 0; }
+  .depoimentos__grid { grid-template-columns: 1fr; }
+  .contato { padding: 64px 0; }
+  .contato__grid { grid-template-columns: 1fr; gap: 40px; }
+  .site-footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 600px) {
+  .form-linha { grid-template-columns: 1fr; }
+  .site-footer__grid { grid-template-columns: 1fr; }
+  .formulario { padding: 28px 22px; }
+}
